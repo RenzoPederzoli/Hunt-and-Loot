@@ -48,6 +48,7 @@ atkBtn.onclick = () => {
       endGame(game.hero.kills)
     }
     if (result === "monster-dead") {
+      game.chooseLoot()
       game.monster = new Monster()
       game.monster.generateMonster(game.hero.kills)
     }

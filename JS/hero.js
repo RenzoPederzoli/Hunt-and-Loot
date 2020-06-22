@@ -21,13 +21,7 @@ class Hero {
     this.health -= heroDmgToTake
 
     if (monster.health - monsterDmgToTake <= 0) {
-      // doesnt work rn!
-      let loot = monster.chooseLoot()
-    
-      console.log(loot)
       this.kills++
-      this.addLoot(loot)
-      this.addItemStats(loot)
       monster.health = 0
       return "monster-dead"
     }
