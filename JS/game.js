@@ -20,21 +20,31 @@ class Game {
       this.hero.addLoot(item1)
       this.hero.addItemStats(item1)
       itemDiv.innerHTML = ""
-      console.log(this.hero)
+      console.log(this.hero,this.monster)
+      return true
     }
     let btnItem2 = document.getElementById("item2")
     btnItem2.onclick = () => {
       this.hero.addLoot(item2)
       this.hero.addItemStats(item2)
       itemDiv.innerHTML = ""
-      console.log(this.hero)
+      console.log(this.hero,this.monster)
+      return true
     }
     let btnItem3 = document.getElementById("item3")
     btnItem3.onclick = () => {
       this.hero.addLoot(item3)
       this.hero.addItemStats(item3)
       itemDiv.innerHTML = ""
-      console.log(this.hero)
+      console.log(this.hero,this.monster)
+      return true
     }
+    return false
+  }
+
+  // Adds html to indicate hero death (endgame)
+  endGame(heroKills) {
+    let div = document.querySelector('#end-game h1')
+    div.innerText = `Game Over ${heroKills} monsters defeated`
   }
 }

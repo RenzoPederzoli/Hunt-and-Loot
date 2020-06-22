@@ -45,10 +45,13 @@ atkBtn.onclick = () => {
     console.log(game.hero, game.monster)
   
     if (result === "hero-dead") {
-      endGame(game.hero.kills)
+      game.endGame(game.hero.kills)
     }
     if (result === "monster-dead") {
-      game.chooseLoot()
+      let chosen = game.chooseLoot()
+      if (!chosen) {
+        alert("please choose loot")
+      }
       game.monster = new Monster()
       game.monster.generateMonster(game.hero.kills)
     }
@@ -57,9 +60,5 @@ atkBtn.onclick = () => {
     alert("Please select a class!")
 }
 
-// Adds html to indicate hero death (endgame)
-const endGame = (heroKills) => {
-  let div = document.querySelector('#end-game h1')
-  div.innerText = `Game Over ${heroKills} monsters defeated`
-}
+
 
