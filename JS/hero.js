@@ -15,17 +15,19 @@ class Hero {
     let monsterDmgToTake = Math.round(this.power * (100 - monster.defense) / 100)
 
     if (this.health - heroDmgToTake <= 0) {
-      // console.log("Hero has died")
       this.health = 0
       return "hero-dead"
     }
     this.health -= heroDmgToTake
 
     if (monster.health - monsterDmgToTake <= 0) {
-      // console.log("Monster has died")
+      // doesnt work rn!
+      let loot = monster.chooseLoot()
+    
+      console.log(loot)
       this.kills++
-      this.addLoot(monster.loot)
-      this.addItemStats(monster.loot)
+      this.addLoot(loot)
+      this.addItemStats(loot)
       monster.health = 0
       return "monster-dead"
     }

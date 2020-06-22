@@ -46,8 +46,48 @@ class Monster {
 
   // Grabs a random loot from the loot.js file
   generateRandomLoot(arr) {
+    let itemArray = []
+
     let randomIndex = Math.floor(Math.random() * arr.length)
-    let randomItem = arr[randomIndex]
-    return randomItem
+    let randomItem1 = arr[randomIndex]
+    itemArray.push(randomItem1)
+
+    randomIndex = Math.floor(Math.random() * arr.length)
+    let randomItem2 = arr[randomIndex]
+    itemArray.push(randomItem2)
+
+    randomIndex = Math.floor(Math.random() * arr.length)
+    let randomItem3 = arr[randomIndex]
+    itemArray.push(randomItem3)
+
+    return itemArray
+  }
+
+  // Maybe thers is a better way to do this?
+  chooseLoot() {
+    let item1 = this.loot[0]
+    let item2 = this.loot[1]
+    let item3 = this.loot[2]
+    let selected = ""
+
+    let itemDiv = document.getElementById("item-choice")
+    itemDiv.innerHTML = `<button class = "item"> ${item1.name} </button>
+    <button class = "item"> ${item2.name} </button>
+    <button class = "item"> ${item3.name} </button>`
+
+    let itemBtns = itemDiv.getElementsByClassName("item")
+    for (let i = 0; i <= 2; i++) {
+      itemBtns[i].onclick = () => {
+        selected = itemBtns[i].innerText
+        itemDiv.innerHTML = ""
+      }
+    }
+
+    if (selected === item1.name)
+      return item1
+    if (selected === item2.name)
+      return item2
+    if (selected === item3.name)
+      return item3
   }
 }

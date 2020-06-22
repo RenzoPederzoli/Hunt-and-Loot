@@ -41,9 +41,8 @@ atkBtn.onclick = () => {
   if (game.hero.role !== null) {
     let result = game.hero.attack(game.monster)
   
-    console.log("attacked", result)
+    console.log("attacked,", `result: ${result}`)
     console.log(game.hero, game.monster)
-    console.log(game.hero.kills)
   
     if (result === "hero-dead") {
       endGame(game.hero.kills)
