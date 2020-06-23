@@ -8,17 +8,22 @@
   <link rel = "stylesheet" href = "https://use.typekit.net/myt6aiw.css" />
 </head>
 <body>
+  <audio id=intro-music src= "../Sounds/Preparing-for-Battle.mp3" autoplay loop></audio>
   <section id = "start-section">
     <h1 id = title>Hunt & Loot</h1>
     <a id = start-btn href = "main.html"> START </a>
     <p id = instructions> <strong>Instructions:</strong> Click the attack button to kill those nasty monsters and claim your loot. Can you make it to the end? </p>
   </section>
   <footer id = bottom-bar>
-    <p>By: Renzo Pederzoli &copy</p>
+    <p>By: Renzo Pederzoli &copy<br>Music by: Eric Matyas</p>
     <p id = links>Find me: 
       <a href = "https://www.linkedin.com/in/renzo-pederzoli-791a0617a/" target="_blank"> <img class = logo src = "../Images/linkedin.png" alt = "linked-in-logo"> </a>
       <a href = "https://github.com/renzop9" target="_blank"> <img class = logo src = "../Images/github-logo.png" alt = "github-logo"> </a> 
     </p>
   </footer>
 </body>
+<script>
+  let introMusic = document.getElementById("intro-music");
+  introMusic.volume = 0.2;
+</script>
 </html>

@@ -42,6 +42,9 @@ class Hero {
     if (this.defense + item.def <= 95) {
       this.defense += item.def
     }
+    else {
+      this.defense = 95;
+    }
   }
 
   makeRogue() {

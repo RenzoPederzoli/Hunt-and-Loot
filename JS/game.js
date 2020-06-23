@@ -5,21 +5,27 @@ class Game {
     this.monster.generateMonster(0)
   }
 
-  chooseLoot() {
+  // Draws loot choices and removes atk btn temporarily
+  chooseLoot(atkContainer) {
     let item1 = this.monster.loot[0]
     let item2 = this.monster.loot[1]
     let item3 = this.monster.loot[2]
 
     let itemDiv = document.getElementById("item-choice")
-    itemDiv.innerHTML = `<button id = "item1"> ${item1.name} </button>
-    <button id = "item2"> ${item2.name} </button>
-    <button id = "item3"> ${item3.name} </button>`
+    itemDiv.innerHTML = `Choose Wisely: 
 
+    <button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Attack: ${item1.atk} <br> Defense: ${item1.def} <br> Health: ${item1.health} </button>
+
+    <button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Attack: ${item2.atk} <br> Defense: ${item2.def} <br> Health: ${item2.health} </button>
+    
+    <button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Attack: ${item3.atk} <br> Defense: ${item3.def} <br> Health: ${item3.health} </button>`
+    
     let btnItem1 = document.getElementById("item1")
     btnItem1.onclick = () => {
       this.hero.addLoot(item1)
       this.hero.addItemStats(item1)
       itemDiv.innerHTML = ""
+      atkContainer.style.visibility = "visible";
       console.log(this.hero,this.monster)
       return true
     }
@@ -28,6 +34,7 @@ class Game {
       this.hero.addLoot(item2)
       this.hero.addItemStats(item2)
       itemDiv.innerHTML = ""
+      atkContainer.style.visibility = "visible";
       console.log(this.hero,this.monster)
       return true
     }
@@ -36,6 +43,7 @@ class Game {
       this.hero.addLoot(item3)
       this.hero.addItemStats(item3)
       itemDiv.innerHTML = ""
+      atkContainer.style.visibility = "visible";
       console.log(this.hero,this.monster)
       return true
     }

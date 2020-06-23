@@ -8,7 +8,7 @@ let rogueBtn = document.getElementById("rogue")
 rogueBtn.onclick = () => {
   game.hero.makeRogue()
   console.log("Chose rogue", game.hero, game.monster)
-  roleBtns.innerHTML = "" // Removes buttons after choosing
+  roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>" // Removes role selection and makes the conatiner that holds them go to z-index 0
 }
 
 // Choosing warrior
@@ -16,7 +16,7 @@ let warriorBtn = document.getElementById("warrior")
 warriorBtn.onclick = () => {
   game.hero.makeWarrior()
   console.log("Chose warrior", game.hero, game.monster)
-  roleBtns.innerHTML = ""
+  roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>"
 }
 
 // Choosing tank
@@ -24,7 +24,7 @@ let tankBtn = document.getElementById("tank")
 tankBtn.onclick = () => {
   game.hero.makeTank()
   console.log("Chose tank", game.hero, game.monster)
-  roleBtns.innerHTML = ""
+  roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>"
 }
 
 //Restart the game
@@ -32,6 +32,9 @@ let restartBtn = document.getElementById("restart-btn")
 restartBtn.onclick = () => {
   location.reload() // This command reloads the page
 }
+
+//Targets where the atk button is
+let atkContainer = document.getElementById('atk-container')
 
 // Event that happens when the atack button is pressed
 // If monster dies, then a new one spawns
@@ -48,10 +51,8 @@ atkBtn.onclick = () => {
       game.endGame(game.hero.kills)
     }
     if (result === "monster-dead") {
-      let chosen = game.chooseLoot()
-      if (!chosen) {
-        alert("please choose loot")
-      }
+      atkContainer.style.visibility = "hidden";
+      game.chooseLoot(atkContainer)
       game.monster = new Monster()
       game.monster.generateMonster(game.hero.kills)
     }
