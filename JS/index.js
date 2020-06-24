@@ -81,8 +81,8 @@ monsterImg.src = "../Images/monster-sprite.png"
 //draws chars on role select
 function drawChars() {
   ctx.clearRect(0,0,canvas.width,canvas.height)
-  ctx.drawImage(heroImg,0,64*15,64,64,25,50,80,80)
-  ctx.drawImage(monsterImg,0,64*13,64,64,200,30,100,100)
+  ctx.drawImage(heroImg,0,64*15,64,64,60,50,80,80)
+  ctx.drawImage(monsterImg,0,64*13,64,64,150,30,100,100)
 }
 
 //draws an individual frame of the sprite sheet
@@ -90,8 +90,8 @@ function drawAtk(frame) {
   if (64 * frame >= 64 * 6)
     frame = 0
   ctx.clearRect(0,0,canvas.width,canvas.height)
-  ctx.drawImage(heroImg,64*frame,64*15,64,64,25,50,80,80)
-  ctx.drawImage(monsterImg,64*frame,64*13,64,64,200,30,100,100)
+  ctx.drawImage(heroImg,64*frame,64*15,64,64,60,50,80,80)
+  ctx.drawImage(monsterImg,64*frame,64*13,64,64,150,30,100,100)
 }
 
 //calls above function once every 50 ms with a counter to defined end of sheet
@@ -109,8 +109,8 @@ function drawDeathHero(frame) {
   if (64 * frame >= 64 * 6)
     frame = 5
   ctx.clearRect(0,0,canvas.width,canvas.height)
-  ctx.drawImage(heroImg,64*frame,64*20,64,64,25,50,80,80)
-  ctx.drawImage(monsterImg,0,64*13,64,64,200,30,100,100)//Draws monster while hero dying
+  ctx.drawImage(heroImg,64*frame,64*20,64,64,60,50,80,80)
+  ctx.drawImage(monsterImg,0,64*13,64,64,150,30,100,100)//Draws monster while hero dying
 }
 
 function heroDeathAnimation() {
@@ -127,8 +127,8 @@ function drawDeathMonster(frame) {
   if (64 * frame >= 64 * 6)
     frame = 5
   ctx.clearRect(0,0,canvas.width,canvas.height)
-  ctx.drawImage(monsterImg,64*frame,64*20,64,64,200,30,100,100)
-  ctx.drawImage(heroImg,0,64*15,64,64,25,50,80,80) //Draws the hero while mosnter dying!
+  ctx.drawImage(monsterImg,64*frame,64*20,64,64,150,30,100,100)
+  ctx.drawImage(heroImg,0,64*15,64,64,60,50,80,80) //Draws the hero while mosnter dying!
 }
 
 function monsterDeathAnimation() {
@@ -140,14 +140,3 @@ function monsterDeathAnimation() {
     counter++
   }, 50)
 }
-
-
-
-
-
-
-
-
-
-
-
