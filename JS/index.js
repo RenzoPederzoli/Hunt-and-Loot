@@ -8,6 +8,7 @@ let rogueBtn = document.getElementById("rogue")
 rogueBtn.onclick = () => {
   drawChars()
   game.hero.makeRogue()
+  game.writeStats()
   console.log("Chose rogue", game.hero, game.monster)
   roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>" // Removes role selection and makes the conatiner that holds them go to z-index 0
 }
@@ -17,6 +18,7 @@ let warriorBtn = document.getElementById("warrior")
 warriorBtn.onclick = () => {
   drawChars()
   game.hero.makeWarrior()
+  game.writeStats()
   console.log("Chose warrior", game.hero, game.monster)
   roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>"
 }
@@ -26,6 +28,7 @@ let tankBtn = document.getElementById("tank")
 tankBtn.onclick = () => {
   drawChars()
   game.hero.makeTank()
+  game.writeStats()
   console.log("Chose tank", game.hero, game.monster)
   roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>"
 }
@@ -106,11 +109,14 @@ function atkAnimation() {
 }
 
 function drawDeathHero(frame) {
-  if (64 * frame >= 64 * 6)
+  let monsterFrame = frame
+  if (64 * frame >= 64 * 6) {
     frame = 5
+    monsterFrame = 0
+  }
   ctx.clearRect(0,0,canvas.width,canvas.height)
   ctx.drawImage(heroImg,64*frame,64*20,64,64,60,50,80,80)
-  ctx.drawImage(monsterImg,0,64*13,64,64,150,30,100,100)//Draws monster while hero dying
+  ctx.drawImage(monsterImg,64*monsterFrame,64*13,64,64,150,30,100,100)//Draws monster while hero dying
 }
 
 function heroDeathAnimation() {
@@ -124,11 +130,14 @@ function heroDeathAnimation() {
 }
 
 function drawDeathMonster(frame) {
-  if (64 * frame >= 64 * 6)
+  let heroFrame = frame
+  if (64 * frame >= 64 * 6) {
     frame = 5
+    heroFrame = 0
+  }
   ctx.clearRect(0,0,canvas.width,canvas.height)
   ctx.drawImage(monsterImg,64*frame,64*20,64,64,150,30,100,100)
-  ctx.drawImage(heroImg,0,64*15,64,64,60,50,80,80) //Draws the hero while mosnter dying!
+  ctx.drawImage(heroImg,64*heroFrame,64*15,64,64,60,50,80,80) //Draws the hero atk while mosnter dying!
 }
 
 function monsterDeathAnimation() {

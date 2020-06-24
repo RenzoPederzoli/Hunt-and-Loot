@@ -27,7 +27,8 @@ class Game {
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
       console.log(this.hero,this.monster)
-      return true
+      this.writeStats()
+      drawChars()
     }
     let btnItem2 = document.getElementById("item2")
     btnItem2.onclick = () => {
@@ -36,7 +37,8 @@ class Game {
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
       console.log(this.hero,this.monster)
-      return true
+      this.writeStats()
+      drawChars()
     }
     let btnItem3 = document.getElementById("item3")
     btnItem3.onclick = () => {
@@ -45,9 +47,9 @@ class Game {
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
       console.log(this.hero,this.monster)
-      return true
+      this.writeStats()
+      drawChars()
     }
-    return false
   }
 
   // Adds html to indicate hero death (endgame)
@@ -55,5 +57,17 @@ class Game {
     let div = document.querySelector('#end-game')
     div.innerHTML += `<h2> You defeated ${heroKills} monsters </h2><p>Click the restart button on the top left to play again!</p>`
     div.style.visibility = "visible"
+  }
+
+  writeStats() {
+    let heroStats = document.getElementById("hero-stats")
+    let heroStatsContainer = document.getElementById("hero-stats-container")
+    heroStatsContainer.style.visibility = "visible"
+    heroStats.innerHTML = `<strong>Statistics: </strong> <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}`
+
+    let monsterStats = document.getElementById("monster-stats")
+    let monsterStatsContainer = document.getElementById("monster-stats-container")
+    monsterStatsContainer.style.visibility = "visible"
+    monsterStats.innerHTML = `<strong>Statistics: </strong> <br> Attack: ${this.monster.power} <br> Defense: ${this.monster.defense} <br> Tier: ${this.monster.tier}`
   }
 }

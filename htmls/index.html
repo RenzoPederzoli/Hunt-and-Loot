@@ -9,6 +9,7 @@
 </head>
 <body>
   <audio id=intro-music src= "../Sounds/Preparing-for-Battle.mp3" autoplay loop></audio>
+  <img id=mute-img onclick="muteAudio()" src="../Images/unmuted.png">
   <section id = "start-section">
     <h1 id = title>Hunt & Loot</h1>
     <a id = start-btn href = "main.html"> START </a>
@@ -22,8 +23,20 @@
     </p>
   </footer>
 </body>
-<script>
+<script type="text/javascript">
   let introMusic = document.getElementById("intro-music");
   introMusic.volume = 0.35;
+  let soundIcon = document.getElementById("mute-img")
+
+  function muteAudio() {
+    if(!introMusic.muted) {
+      document.getElementById("intro-music").muted = true;
+      soundIcon.src = "../Images/muted.png"
+    }
+    else {
+      introMusic.muted = false
+      soundIcon.src = "../Images/unmuted.png"
+    }
+  }
 </script>
 </html>
