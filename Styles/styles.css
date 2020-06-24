@@ -9,13 +9,43 @@ body {
   background-size: cover;
 }
 
+#end-game {
+  background-image: url(../Images/wood-texture-1.jpg);
+  box-shadow: 0px 14px 40px 10px rgba(0,0,0,1);
+  color: whitesmoke;
+  text-shadow: -3px 3px 5px rgba(150, 150, 150, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  visibility: hidden;
+}
+
+#end-game h1 {
+  font-size: 60px;
+}
+
+#end-game h2 {
+  font-size: 40px;
+}
+
+#end-game p {
+  font-size: 20px;
+}
+
 #item-choice {
   width: 75%;
   position: absolute;
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
   z-index: 1;
@@ -26,48 +56,48 @@ body {
 
 .item-btn {
   width: 25%;
-  box-shadow:inset 0px 34px 0px -15px #b54b3a;
-	background-color:#a73f2d;
-	border:5px inset #241d13;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:18px;
-	padding:9px 23px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #7a2a1d;
+  box-shadow: inset 0px 34px 0px -15px #b54b3a;
+  background-color: #a73f2d;
+  border: 5px inset #241d13;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 9px 23px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #7a2a1d;
 }
 
 .item-btn:hover {
-	background-color:#b34332;
+  background-color: #b34332;
 }
 
 .item-btn:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
 .top-btn {
-  box-shadow:inset 0px 1px 0px 0px #a6827e;
-	background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
-	background-color:#7d5d3b;
-	border-radius:3px;
-	border:1px solid #54381e;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:16px;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #4d3534;
+  box-shadow: inset 0px 1px 0px 0px #a6827e;
+  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  background-color: #7d5d3b;
+  border-radius: 3px;
+  border: 1px solid #54381e;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #4d3534;
 }
 
 .top-btn:hover {
-	background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
-	background-color:#634b30;
+  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  background-color: #634b30;
 }
 
 .top-btn:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
 #rogue {
@@ -127,7 +157,7 @@ body {
 
 .role-container:active {
   position: relative;
-  top:2px;
+  top: 2px;
 }
 
 .btn {

@@ -52,7 +52,8 @@ class Game {
 
   // Adds html to indicate hero death (endgame)
   endGame(heroKills) {
-    let div = document.querySelector('#end-game h1')
-    div.innerText = `Game Over ${heroKills} monsters defeated`
+    let div = document.querySelector('#end-game')
+    div.innerHTML += `<h2> You defeated ${heroKills} monsters </h2><p>Click the restart button on the top left to play again!</p>`
+    div.style.visibility = "visible"
   }
 }
