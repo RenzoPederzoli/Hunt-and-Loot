@@ -4,4 +4,4 @@ Description: Hunt & Loot is a two-dimensional dungeon style looter. The objectiv
 
 Technologies used: JavaScript, CSS & HTML, using canvas for animations and sprite sheets for the assets.
 
-Link: doesnotdoantyhgyet.com
+Link: https://renzopederzoli.github.io/Hunt-and-Loot/htmls/index.html
