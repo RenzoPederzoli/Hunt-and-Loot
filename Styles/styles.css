@@ -143,11 +143,9 @@ body {
 
 .item-btn {
   width: 25%;
-  box-shadow: inset 0px 34px 0px -15px #b54b3a;
-  background-color: #a73f2d;
+  background-image: url("../Images/stone-bg.jpg");
   border: 5px inset #241d13;
   cursor: pointer;
-  color: #ffffff;
   font-size: 18px;
   padding: 9px 23px;
   text-decoration: none;

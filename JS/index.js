@@ -83,7 +83,6 @@ let atkContainer = document.getElementById('atk-container')
 // If hero dies, game is over
 let atkBtn = document.getElementById("atk-btn")
 atkBtn.onclick = () => {  
-  atkAnimation()
   swordSound.play()
   let result = game.hero.attack(game.monster)
   game.writeStats()
@@ -96,7 +95,7 @@ atkBtn.onclick = () => {
     atkContainer.style.visibility = "hidden";
     game.endGame(game.hero.kills)
   }
-  if (result === "monster-dead") {
+  else if (result === "monster-dead") {
     monsterDeathAnimation()
     monsterDeath.play()
     atkContainer.style.visibility = "hidden";
@@ -104,6 +103,8 @@ atkBtn.onclick = () => {
     game.monster = new Monster()
     game.monster.generateMonster(game.hero.kills)
   }
+  else
+    atkAnimation()
 }
 
 // Everything below has to do with canvas and drawing
