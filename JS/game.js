@@ -1,3 +1,6 @@
+//Target stage h3 tag
+let stageCounter = document.getElementById("stages")
+
 class Game {
   constructor() {
     this.hero = new Hero()
@@ -26,9 +29,10 @@ class Game {
       this.hero.addItemStats(item1)
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
-      console.log(this.hero,this.monster)
       this.writeStats()
       drawChars()
+      stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
+      console.log(this.hero,this.monster)
     }
     let btnItem2 = document.getElementById("item2")
     btnItem2.onclick = () => {
@@ -36,9 +40,10 @@ class Game {
       this.hero.addItemStats(item2)
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
-      console.log(this.hero,this.monster)
       this.writeStats()
       drawChars()
+      stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
+      console.log(this.hero,this.monster)
     }
     let btnItem3 = document.getElementById("item3")
     btnItem3.onclick = () => {
@@ -46,16 +51,17 @@ class Game {
       this.hero.addItemStats(item3)
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
-      console.log(this.hero,this.monster)
       this.writeStats()
       drawChars()
+      stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
+      console.log(this.hero,this.monster)
     }
   }
 
   // Adds html to indicate hero death (endgame)
   endGame(heroKills) {
     let div = document.querySelector('#end-game')
-    div.innerHTML += `<h2> You defeated ${heroKills} monsters </h2><p>Click the restart button on the top left to play again!</p>`
+    div.innerHTML += `<h2> You cleared ${heroKills} stages </h2><p>Click the restart button on the top left to play again!</p>`
     div.style.visibility = "visible"
   }
 
@@ -63,11 +69,11 @@ class Game {
     let heroStats = document.getElementById("hero-stats")
     let heroStatsContainer = document.getElementById("hero-stats-container")
     heroStatsContainer.style.visibility = "visible"
-    heroStats.innerHTML = `<strong>Statistics: </strong> <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}`
+    heroStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.hero.health} <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}`
 
     let monsterStats = document.getElementById("monster-stats")
     let monsterStatsContainer = document.getElementById("monster-stats-container")
     monsterStatsContainer.style.visibility = "visible"
-    monsterStats.innerHTML = `<strong>Statistics: </strong> <br> Attack: ${this.monster.power} <br> Defense: ${this.monster.defense} <br> Tier: ${this.monster.tier}`
+    monsterStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.monster.health} <br> Attack: ${this.monster.power} <br> Defense: ${this.monster.defense} <br> Tier: ${this.monster.tier}`
   }
 }

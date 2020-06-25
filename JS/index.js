@@ -1,5 +1,8 @@
 let game = new Game()
 
+//Initializes stages
+stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
+
 // Targets div that hold roles
 let roleBtns = document.getElementById("roles")
 
@@ -9,6 +12,7 @@ rogueBtn.onclick = () => {
   drawChars()
   game.hero.makeRogue()
   game.writeStats()
+  stageCounter.style.visibility = "visible"
   console.log("Chose rogue", game.hero, game.monster)
   roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>" // Removes role selection and makes the conatiner that holds them go to z-index 0
 }
@@ -19,6 +23,7 @@ warriorBtn.onclick = () => {
   drawChars()
   game.hero.makeWarrior()
   game.writeStats()
+  stageCounter.style.visibility = "visible"
   console.log("Chose warrior", game.hero, game.monster)
   roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>"
 }
@@ -29,6 +34,7 @@ tankBtn.onclick = () => {
   drawChars()
   game.hero.makeTank()
   game.writeStats()
+  stageCounter.style.visibility = "visible"
   console.log("Chose tank", game.hero, game.monster)
   roleBtns.innerHTML = "<style> #roles {z-index: 0;} </style>"
 }
@@ -46,29 +52,25 @@ let atkContainer = document.getElementById('atk-container')
 // If monster dies, then a new one spawns
 // If hero dies, game is over
 let atkBtn = document.getElementById("atk-btn")
-atkBtn.onclick = () => {
+atkBtn.onclick = () => {  
   atkAnimation()
-  if (game.hero.role !== null) {
-    let result = game.hero.attack(game.monster)
-  
-    console.log("attacked,", `result: ${result}`)
-    console.log(game.hero, game.monster)
-  
-    if (result === "hero-dead") {
-      heroDeathAnimation()
-      atkContainer.style.visibility = "hidden";
-      game.endGame(game.hero.kills)
-    }
-    if (result === "monster-dead") {
-      monsterDeathAnimation()
-      atkContainer.style.visibility = "hidden";
-      game.chooseLoot(atkContainer)
-      game.monster = new Monster()
-      game.monster.generateMonster(game.hero.kills)
-    }
+  let result = game.hero.attack(game.monster)
+  game.writeStats()
+  console.log("attacked,", `result: ${result}`)
+  console.log(game.hero, game.monster)
+
+  if (result === "hero-dead") {
+    heroDeathAnimation()
+    atkContainer.style.visibility = "hidden";
+    game.endGame(game.hero.kills)
   }
-  else
-    alert("Please select a class!")
+  if (result === "monster-dead") {
+    monsterDeathAnimation()
+    atkContainer.style.visibility = "hidden";
+    game.chooseLoot(atkContainer)
+    game.monster = new Monster()
+    game.monster.generateMonster(game.hero.kills)
+  }
 }
 
 // Everything below has to do with canvas and drawing
