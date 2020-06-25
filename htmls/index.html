@@ -8,6 +8,7 @@
   <link rel = "stylesheet" href = "https://use.typekit.net/myt6aiw.css" />
 </head>
 <body>
+  <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
   <audio id=intro-music src= "../Sounds/Preparing-for-Battle.mp3" autoplay loop></audio>
   <img id=mute-img onclick="muteAudio()" src="../Images/unmuted.png">
   <section id = "start-section">
@@ -25,7 +26,6 @@
 </body>
 <script type="text/javascript">
   let introMusic = document.getElementById("intro-music");
-  introMusic.muted = true
   introMusic.volume = 0.35;
   let soundIcon = document.getElementById("mute-img")
 
