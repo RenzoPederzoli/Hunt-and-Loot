@@ -10,7 +10,7 @@ class Monster {
   generateMonster(killCount) {
     if (killCount <= 5) {
       this.health = Math.round(Math.random() * (120 - 80)) + 80
-      this.power = Math.round(Math.random() * (15 - 5)) + 5
+      this.power = Math.round(Math.random() * (15 - 5)) + 5 
       this.defense = Math.round(Math.random() * (5))
       this.loot = this.generateRandomLoot(lootArray)
     }

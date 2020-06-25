@@ -1,15 +1,22 @@
 let game = new Game()
 
+//Everything with sound below this
+const swordSound = new Audio("../Sounds/sword-swing.wav")
+const monsterDeath = new Audio("../Sounds/monster-death.wav")
+const heroDeath = new Audio("../Sounds/hero-death.wav")
+const roleSelect = new Audio("../Sounds/role-select.wav")
+
 //Initializes stages
 stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
 
 // Targets div that hold roles
 let roleBtns = document.getElementById("roles")
-
 // Choosing rogue
 let rogueBtn = document.getElementById("rogue")
 rogueBtn.onclick = () => {
-  drawChars()
+  roleSelect.play()
+  heroImg.src = "../Images/rogue-sprite.png"
+  heroImg.onload = drawChars
   game.hero.makeRogue()
   game.writeStats()
   stageCounter.style.visibility = "visible"
@@ -20,7 +27,9 @@ rogueBtn.onclick = () => {
 // Choosing warrior
 let warriorBtn = document.getElementById("warrior")
 warriorBtn.onclick = () => {
-  drawChars()
+  roleSelect.play()
+  heroImg.src = "../Images/warrior-sprite.png"
+  heroImg.onload = drawChars
   game.hero.makeWarrior()
   game.writeStats()
   stageCounter.style.visibility = "visible"
@@ -31,7 +40,9 @@ warriorBtn.onclick = () => {
 // Choosing tank
 let tankBtn = document.getElementById("tank")
 tankBtn.onclick = () => {
-  drawChars()
+  roleSelect.play()
+  heroImg.src = "../Images/tank-sprite.png"
+  heroImg.onload = drawChars
   game.hero.makeTank()
   game.writeStats()
   stageCounter.style.visibility = "visible"
@@ -54,6 +65,7 @@ let atkContainer = document.getElementById('atk-container')
 let atkBtn = document.getElementById("atk-btn")
 atkBtn.onclick = () => {  
   atkAnimation()
+  swordSound.play()
   let result = game.hero.attack(game.monster)
   game.writeStats()
   console.log("attacked,", `result: ${result}`)
@@ -61,11 +73,13 @@ atkBtn.onclick = () => {
 
   if (result === "hero-dead") {
     heroDeathAnimation()
+    heroDeath.play()
     atkContainer.style.visibility = "hidden";
     game.endGame(game.hero.kills)
   }
   if (result === "monster-dead") {
     monsterDeathAnimation()
+    monsterDeath.play()
     atkContainer.style.visibility = "hidden";
     game.chooseLoot(atkContainer)
     game.monster = new Monster()
@@ -78,10 +92,9 @@ const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext('2d')
 
 let heroImg = new Image()
-heroImg.src = "../Images/basicsprite.png"
 
 let monsterImg = new Image()
-monsterImg.src = "../Images/monster-sprite.png"
+monsterImg.src = "../Images/tier-5-monster.png"
 
 //draws chars on role select
 function drawChars() {

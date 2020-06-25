@@ -30,8 +30,8 @@ class Game {
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
       this.writeStats()
-      drawChars()
-      stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
+      this.selectMonsterSprite(this.monster.tier)
+      stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
     }
     let btnItem2 = document.getElementById("item2")
@@ -41,8 +41,8 @@ class Game {
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
       this.writeStats()
-      drawChars()
-      stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
+      this.selectMonsterSprite(this.monster.tier)
+      stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
     }
     let btnItem3 = document.getElementById("item3")
@@ -52,8 +52,8 @@ class Game {
       itemDiv.innerHTML = ""
       atkContainer.style.visibility = "visible";
       this.writeStats()
-      drawChars()
-      stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
+      this.selectMonsterSprite(this.monster.tier)
+      stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
     }
   }
@@ -75,5 +75,28 @@ class Game {
     let monsterStatsContainer = document.getElementById("monster-stats-container")
     monsterStatsContainer.style.visibility = "visible"
     monsterStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.monster.health} <br> Attack: ${this.monster.power} <br> Defense: ${this.monster.defense} <br> Tier: ${this.monster.tier}`
+  }
+
+  selectMonsterSprite(tier) {
+    if (tier === 4) {
+      monsterImg.src = "../Images/tier-4-monster.png"
+      monsterImg.onload = drawChars
+    }
+    else if (tier === 3) {
+      monsterImg.src = "../Images/tier-3-monster.png"
+      monsterImg.onload = drawChars
+    }
+    else if (tier === 2) {
+      monsterImg.src = "../Images/tier-2-monster.png"
+      monsterImg.onload = drawChars
+    }
+    else if (tier === 1) {
+      monsterImg.src = "../Images/tier-1-monster.png"
+      monsterImg.onload = drawChars
+    }
+    else {
+      monsterImg.src = "../Images/tier-5-monster.png"
+      monsterImg.onload = drawChars
+    }
   }
 }

@@ -9,6 +9,20 @@ body {
   background-size: cover;
 }
 
+#item-list {
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
+#item-list-container {
+  background-color: tomato;
+  width: 20%;
+  position: absolute;
+  left: 12%;
+  top: 15%;
+}
+
 #stages {
   position: absolute;
   left: 50%;
@@ -31,7 +45,7 @@ body {
   top: 77%;
   bottom: 80%;
   width:12%;
-  height: 12%;
+  height: fit-content;
   visibility: hidden;
 }
 
@@ -57,7 +71,7 @@ body {
   top: 77%;
   bottom: 80%;
   width:12%;
-  height: 10%;
+  height: fit-content;
   visibility: hidden;
 }
 
