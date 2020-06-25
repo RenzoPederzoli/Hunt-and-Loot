@@ -8,7 +8,7 @@ const heroDeath = new Audio("../Sounds/hero-death.wav")
 const roleSelect = new Audio("../Sounds/role-select.wav")
 const clickButton = new Audio("../Sounds/click-button.ogg")
 
-backgroundMusic.volume = 0.35
+backgroundMusic.volume = 0.15
 backgroundMusic.loop = true
 backgroundMusic.play()
 
