@@ -1,10 +1,29 @@
 let game = new Game()
 
 //Everything with sound below this
+const backgroundMusic = new Audio("../Sounds/background.m4a")
 const swordSound = new Audio("../Sounds/sword-swing.wav")
 const monsterDeath = new Audio("../Sounds/monster-death.wav")
 const heroDeath = new Audio("../Sounds/hero-death.wav")
 const roleSelect = new Audio("../Sounds/role-select.wav")
+const clickButton = new Audio("../Sounds/click-button.ogg")
+
+backgroundMusic.volume = 0.35
+backgroundMusic.loop = true
+backgroundMusic.play()
+
+let soundIcon = document.getElementById("mute-img")
+function muteAudio() {
+  clickButton.play()
+  if(!backgroundMusic.muted) {
+    backgroundMusic.muted = true;
+    soundIcon.src = "../Images/muted.png"
+  }
+  else {
+    backgroundMusic.muted = false
+    soundIcon.src = "../Images/unmuted.png"
+  }
+}
 
 //Initializes stages
 stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
@@ -120,7 +139,7 @@ function atkAnimation() {
       return
     drawAtk(counter)
     counter++
-  }, 50)
+  }, 40)
 }
 
 function drawDeathHero(frame) {
@@ -141,7 +160,7 @@ function heroDeathAnimation() {
       return
     drawDeathHero(counter)
     counter++
-  }, 50)
+  }, 40)
 }
 
 function drawDeathMonster(frame) {
@@ -162,5 +181,5 @@ function monsterDeathAnimation() {
       return
     drawDeathMonster(counter)
     counter++
-  }, 50)
+  }, 40)
 }

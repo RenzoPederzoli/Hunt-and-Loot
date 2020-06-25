@@ -25,6 +25,7 @@ class Game {
     
     let btnItem1 = document.getElementById("item1")
     btnItem1.onclick = () => {
+      clickButton.play()
       this.hero.addLoot(item1)
       this.hero.addItemStats(item1)
       itemDiv.innerHTML = ""
@@ -36,6 +37,7 @@ class Game {
     }
     let btnItem2 = document.getElementById("item2")
     btnItem2.onclick = () => {
+      clickButton.play()
       this.hero.addLoot(item2)
       this.hero.addItemStats(item2)
       itemDiv.innerHTML = ""
@@ -47,6 +49,7 @@ class Game {
     }
     let btnItem3 = document.getElementById("item3")
     btnItem3.onclick = () => {
+      clickButton.play()
       this.hero.addLoot(item3)
       this.hero.addItemStats(item3)
       itemDiv.innerHTML = ""

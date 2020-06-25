@@ -9,6 +9,17 @@ body {
   background-size: cover;
 }
 
+#top-bar {
+  width:275px;
+  display:flex;
+  justify-content: space-evenly;
+}
+
+#mute-img {
+  cursor: pointer;
+  height: 38px;
+}
+
 #item-list {
   overflow: hidden;
   overflow-y: scroll;
