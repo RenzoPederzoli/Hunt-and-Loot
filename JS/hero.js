@@ -48,23 +48,23 @@ class Hero {
   }
 
   makeRogue() {
-    this.health = 200 
-    this.power = 35
+    this.health = 225 
+    this.power = 40
     this.defense = 0
     this.role = "rogue"
   }
 
   makeWarrior() {
-    this.health = 300
-    this.power = 22.5
-    this.defense = 5
+    this.health = 325
+    this.power = 25
+    this.defense = 10
     this.role = "warrior"
   }
 
   makeTank() {
     this.health = 400
     this.power = 15
-    this.defense = 10
+    this.defense = 20
     this.role = "tank"
   }
 }

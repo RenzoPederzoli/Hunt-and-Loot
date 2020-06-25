@@ -43,7 +43,8 @@ class Monster {
       this.loot = this.generateRandomLoot()
     }
   }
-
+  
+  // determines what array the loot will come from
   determineLootPool() {
     if (this.tier === 5) {
       let rand = Math.random()
@@ -53,6 +54,52 @@ class Monster {
         return uncommonLoot
       else 
         return rareLoot
+    }
+    if (this.tier === 4) {
+      let rand = Math.random()
+      if (rand < 0.6)
+        return commonLoot
+      else if (rand >= 0.6 && rand < 0.93)
+        return uncommonLoot
+      else if (rand >= 0.93 && rand < 0.99)
+        return rareLoot
+      else
+        return epicLoot
+    }
+    if (this.tier === 3) {
+      let rand = Math.random()
+      if (rand < 0.5)
+        return commonLoot
+      else if (rand >= 0.5 && rand < 0.75)
+        return uncommonLoot
+      else if (rand >= 0.75 && rand < 0.97)
+        return rareLoot
+      else
+        return epicLoot
+    }
+    if (this.tier === 2) {
+      let rand = Math.random()
+      if (rand < 0.4)
+        return commonLoot
+      else if (rand >= 0.4 && rand < 0.6)
+        return uncommonLoot
+      else if (rand >= 0.6 && rand < 0.85)
+        return rareLoot
+      else
+        return epicLoot
+    }
+    if (this.tier === 1) {
+      let rand = Math.random()
+      if (rand < 0.15)
+        return commonLoot
+      else if (rand >= 0.15 && rand < 0.35)
+        return uncommonLoot
+      else if (rand >= 0.35 && rand < 0.80)
+        return rareLoot
+      else if (rand >= 0.80 && rand < 0.999)
+        return epicLoot
+      else 
+        return legendaryLoot
     }
   }
 
