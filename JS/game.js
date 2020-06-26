@@ -14,6 +14,13 @@ class Game {
     let item2 = this.monster.loot[1]
     let item3 = this.monster.loot[2]
 
+    if (item1.rarity === "Legendary") 
+      new Audio("../Sounds/legendarydrop.mp3").play()
+    else if (item2.rarity === "Legendary")
+      new Audio("../Sounds/legendarydrop.mp3").play()
+    else if (item3.rarity === "Legendary")
+      new Audio("../Sounds/legendarydrop.mp3").play()
+
     let itemDiv = document.getElementById("item-choice")
     itemDiv.innerHTML = `Choose Wisely: 
 

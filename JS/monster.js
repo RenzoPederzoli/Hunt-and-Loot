@@ -117,7 +117,6 @@ class Monster {
       else if (rand >= 0.80 && rand < 0.99)
         return epicLoot
       else {
-        new Audio("../Sounds/legendarydrop.mp3").play()
         return legendaryLoot
       }
     }
