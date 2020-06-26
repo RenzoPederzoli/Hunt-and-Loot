@@ -14,15 +14,15 @@ const uncommonLoot = [
 ]
 
 const rareLoot = [
-  { name: "Steel sword", atk: 15, def: 0, health: 0, rarity: "Rare"},
-  { name: "Heal", atk: 0, def: 0, health: 60, rarity: "Rare"},
-  { name: "Chest Plate", atk: 0, def: 10, health: 0, rarity: "Rare"},
-  { name: "Adventure Pants", atk: 10, def: 5, health: 15, rarity: "Rare"}
+  { name: "Steel sword", atk: 20, def: 0, health: 0, rarity: "Rare"},
+  { name: "Heal", atk: 0, def: 0, health: 70, rarity: "Rare"},
+  { name: "Chest Plate", atk: 0, def: 12, health: 0, rarity: "Rare"},
+  { name: "Adventure Pants", atk: 12, def: 6, health: 20, rarity: "Rare"}
 ]
 
 const epicLoot = [
   { name: "Staff of the Magi", atk: 30, def: 0, health: 10, rarity: "Epic"},
-  { name: "Divine Heal", atk: 0, def: 3, health: 100, rarity: "Epic"},
+  { name: "Divine Heal", atk: 0, def: 3, health: 120, rarity: "Epic"},
   { name: "Paladin's Hammer", atk: 50, def: 0, health: 30, rarity: "Epic"},
   { name: "Impregnable Defense", atk: 0, def: 20, health: 0, rarity: "Epic"},
   { name: "Adventure Shoes", atk: 20, def: 10, health: 25, rarity: "Epic"}

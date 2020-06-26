@@ -73,7 +73,7 @@ class Game {
     let heroStatsContainer = document.getElementById("hero-stats-container")
     heroStatsContainer.style.visibility = "visible"
     if (this.hero.defense === 85)
-      heroStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.hero.health} <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}(max)`
+      heroStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.hero.health} <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense} (max)`
     else 
       heroStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.hero.health} <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}`
 
