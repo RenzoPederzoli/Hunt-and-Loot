@@ -2,7 +2,6 @@ let game = new Game()
 
 //Everything with sound below this
 const backgroundMusic = new Audio("../Sounds/background.m4a")
-const swordSound = new Audio("../Sounds/sword-swing.wav")
 const monsterDeath = new Audio("../Sounds/monster-death.wav")
 const heroDeath = new Audio("../Sounds/hero-death.wav")
 const roleSelect = new Audio("../Sounds/role-select.wav")
@@ -83,7 +82,7 @@ let atkContainer = document.getElementById('atk-container')
 // If hero dies, game is over
 let atkBtn = document.getElementById("atk-btn")
 atkBtn.onclick = () => {  
-  swordSound.play()
+  new Audio("../Sounds/sword-swing.wav").play() // Lets you spam sound
   let result = game.hero.attack(game.monster)
   game.writeStats()
   console.log("attacked,", `result: ${result}`)

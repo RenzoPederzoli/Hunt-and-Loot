@@ -35,10 +35,17 @@ class Monster {
       this.tier = 2
       this.loot = this.generateRandomLoot()
     }
-    else {
-      this.health = Math.round(Math.random() * (200 - 160)) + 160
-      this.power = Math.round(Math.random() * (35 - 25)) + 25
-      this.defense = Math.round(Math.random() * (25))
+    else if (killCount >= 21 && killCount <= 26){
+      this.health = (Math.round(Math.random() * (200 - 160)) + 160) 
+      this.power = (Math.round(Math.random() * (35 - 25)) + 25) 
+      this.defense = (Math.round(Math.random() * (25))) 
+      this.tier = 1
+      this.loot = this.generateRandomLoot()
+    }
+    else { // This will be where I make game infinetly scale
+      this.health = (Math.round(Math.random() * (200 - 160)) + 160) 
+      this.power = (Math.round(Math.random() * (35 - 25)) + 25) 
+      this.defense = (Math.round(Math.random() * (25))) 
       this.tier = 1
       this.loot = this.generateRandomLoot()
     }
@@ -98,8 +105,10 @@ class Monster {
         return rareLoot
       else if (rand >= 0.80 && rand < 0.999)
         return epicLoot
-      else 
+      else {
+        new Audio("../Sounds/legendarydrop.mp3").play()
         return legendaryLoot
+      }
     }
   }
 
@@ -110,6 +119,7 @@ class Monster {
     let arr = this.determineLootPool()
     let randomIndex = Math.floor(Math.random() * arr.length)
     let randomItem1 = arr[randomIndex]
+
     itemArray.push(randomItem1)
 
     arr = this.determineLootPool()
