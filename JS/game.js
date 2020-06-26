@@ -72,7 +72,10 @@ class Game {
     let heroStats = document.getElementById("hero-stats")
     let heroStatsContainer = document.getElementById("hero-stats-container")
     heroStatsContainer.style.visibility = "visible"
-    heroStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.hero.health} <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}`
+    if (this.hero.defense === 85)
+      heroStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.hero.health} <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}(max)`
+    else 
+      heroStats.innerHTML = `<strong>Statistics: </strong> <br> Health: ${this.hero.health} <br> Attack: ${this.hero.power} <br> Defense: ${this.hero.defense}`
 
     let monsterStats = document.getElementById("monster-stats")
     let monsterStatsContainer = document.getElementById("monster-stats-container")

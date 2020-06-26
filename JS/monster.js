@@ -44,9 +44,11 @@ class Monster {
       this.loot = this.generateRandomLoot()
     }
     else { // This will be where I make game infinetly scale
-      this.health = Math.round(Math.random() * (200 - 160) * scale) + 160
-      this.power = Math.round(Math.random() * (35 - 25) * scale) + 25
-      this.defense = Math.round(Math.random() * (25) * scale)
+      this.health = Math.round(Math.random() * (200 - 160) ** scale) + 160
+      this.power = Math.round(Math.random() * (35 - 25) ** scale) + 25
+      this.defense = Math.round(Math.random() * (25) ** scale)
+      if (this.defense > 85)
+        this.defense = 85
       this.tier = 1
       this.loot = this.generateRandomLoot()
       scale += 0.10
