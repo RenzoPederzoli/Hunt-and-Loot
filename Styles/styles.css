@@ -20,24 +20,11 @@ body {
   height: 38px;
 }
 
-#item-list {
-  overflow: hidden;
-  overflow-y: scroll;
-  max-height: 200px;
-}
-
-#item-list-container {
-  background-color: tomato;
-  width: 20%;
-  position: absolute;
-  left: 12%;
-  top: 15%;
-}
-
 #stages {
   position: absolute;
   left: 50%;
-  top: 10%;
+  top: 1%;
+  color: white;
   transform: translate(-50%, -50%);
   font-size: 52px;
   visibility: hidden;

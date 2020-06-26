@@ -48,8 +48,8 @@ class Hero {
   }
 
   makeRogue() {
-    this.health = 225 
-    this.power = 40
+    this.health = 250 
+    this.power = 45
     this.defense = 0
     this.role = "rogue"
   }
