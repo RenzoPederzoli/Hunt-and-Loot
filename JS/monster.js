@@ -1,4 +1,4 @@
-let scale = 1.05
+let scale = 1.045
 class Monster {
   constructor(health = 100, power = 10, defense = 0) {
     this.health = health
@@ -58,7 +58,7 @@ class Monster {
         this.defense = 85
       this.tier = 1
       this.loot = this.generateRandomLoot()
-      scale += 0.053
+      scale += 0.05
     }
   }
   
