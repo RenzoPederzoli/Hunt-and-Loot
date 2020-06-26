@@ -32,7 +32,10 @@ class Game {
       atkContainer.style.visibility = "visible";
       this.writeStats()
       this.selectMonsterSprite(this.monster.tier)
-      stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
+      if (this.hero.kills + 1 === 50)
+        stageCounter.innerHTML = `Stage: ${MID-GAME-BOSS}`
+      else
+        stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
     }
     let btnItem2 = document.getElementById("item2")
@@ -44,7 +47,10 @@ class Game {
       atkContainer.style.visibility = "visible";
       this.writeStats()
       this.selectMonsterSprite(this.monster.tier)
-      stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
+      if (this.hero.kills + 1 === 50)
+        stageCounter.innerHTML = `Stage: ${MID-GAME-BOSS}`
+      else
+        stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
     }
     let btnItem3 = document.getElementById("item3")
@@ -56,7 +62,10 @@ class Game {
       atkContainer.style.visibility = "visible";
       this.writeStats()
       this.selectMonsterSprite(this.monster.tier)
-      stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
+      if (this.hero.kills + 1 === 50)
+        stageCounter.innerHTML = `Stage: ${MID-GAME-BOSS}`
+      else
+        stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
     }
   }

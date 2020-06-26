@@ -43,6 +43,13 @@ class Monster {
       this.tier = 1
       this.loot = this.generateRandomLoot()
     }
+    else if (killCount === 50) { //Mini-Boss at stage 50
+      this.health = 3000
+      this.power = 350
+      this.defense = 85
+      this.tier = "Mini-Boss"
+      this.loot = this.generateRandomLoot()
+    }
     else { // This will be where I make game infinetly scale
       this.health = Math.round(Math.random() * (200 - 160) ** scale) + 160
       this.power = Math.round(Math.random() * (35 - 25) ** scale) + 25
@@ -51,7 +58,7 @@ class Monster {
         this.defense = 85
       this.tier = 1
       this.loot = this.generateRandomLoot()
-      scale += 0.06
+      scale += 0.056
     }
   }
   
@@ -113,6 +120,12 @@ class Monster {
         new Audio("../Sounds/legendarydrop.mp3").play()
         return legendaryLoot
       }
+    }
+    if (this.tier === "Mini-Boss") {
+      if (rand < 0.75)
+        return epicLoot
+      else
+        return legendaryLoot
     }
   }
 

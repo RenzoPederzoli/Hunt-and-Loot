@@ -22,6 +22,7 @@ const rareLoot = [
 
 const epicLoot = [
   { name: "Staff of the Magi", atk: 60, def: 0, health: 10, rarity: "Epic"},
+  { name: "Geralt's Great Sword", atk: 90, def: 0, health: 0, rarity: "Epic"},
   { name: "Divine Heal", atk: 0, def: 3, health: 120, rarity: "Epic"},
   { name: "Paladin's Hammer", atk: 50, def: 0, health: 30, rarity: "Epic"},
   { name: "Impregnable Defense", atk: 0, def: 20, health: 0, rarity: "Epic"},
@@ -32,6 +33,6 @@ const legendaryLoot = [
   { name: "Felipe's Rod", atk: 100, def: 20, health: 50, rarity: "Legendary"},
   { name: "Zeek", atk: 350, def: 11, health: 0, rarity: "Legendary"},
   { name: "Angel's Lightning", atk: 25, def: 50, health: 240, rarity: "Legendary"},
-  { name: "Hezi's Chopsticks", atk: 1000, def: 5, health: 0, rarity: "Legendary"},
-  { name: "Ahal's Ram", atk: 130, def: 30, health: 0, rarity: "Legendary"}
+  { name: "Jayson's Bow", atk: 500, def: 0, health: 0, rarity: "Legendary"},
+  { name: "Ahal's Bongos", atk: 150, def: 30, health: 0, rarity: "Legendary"}
 ]
