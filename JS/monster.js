@@ -58,7 +58,7 @@ class Monster {
         this.defense = 85
       this.tier = 1
       this.loot = this.generateRandomLoot()
-      scale += 0.056
+      scale += 0.053
     }
   }
   

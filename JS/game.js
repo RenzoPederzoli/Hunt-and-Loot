@@ -39,8 +39,8 @@ class Game {
       atkContainer.style.visibility = "visible";
       this.writeStats()
       this.selectMonsterSprite(this.monster.tier)
-      if (this.hero.kills + 1 === 50)
-        stageCounter.innerHTML = `Stage: ${MID-GAME-BOSS}`
+      if (this.hero.kills  === 49)
+        stageCounter.innerHTML = `Stage: MID-GAME-BOSS`
       else
         stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
@@ -54,8 +54,8 @@ class Game {
       atkContainer.style.visibility = "visible";
       this.writeStats()
       this.selectMonsterSprite(this.monster.tier)
-      if (this.hero.kills + 1 === 50)
-        stageCounter.innerHTML = `Stage: ${MID-GAME-BOSS}`
+      if (this.hero.kills === 49)
+        stageCounter.innerHTML = `Stage: MID-GAME-BOSS`
       else
         stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
@@ -69,8 +69,8 @@ class Game {
       atkContainer.style.visibility = "visible";
       this.writeStats()
       this.selectMonsterSprite(this.monster.tier)
-      if (this.hero.kills + 1 === 50)
-        stageCounter.innerHTML = `Stage: ${MID-GAME-BOSS}`
+      if (this.hero.kills === 49)
+        stageCounter.innerHTML = `Stage: MID-GAME-BOSS`
       else
         stageCounter.innerHTML = `Stage: ${this.hero.kills + 1}`
       console.log(this.hero,this.monster)
