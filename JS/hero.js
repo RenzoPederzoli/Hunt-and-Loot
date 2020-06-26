@@ -1,5 +1,5 @@
 class Hero {
-  constructor(health = 200, power = 15, defense = 5, kills = 48,role=null) {
+  constructor(health = 200, power = 15, defense = 5, kills = 0,role=null) {
     this.health = health
     this.power = power
     this.defense = defense
