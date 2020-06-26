@@ -34,5 +34,6 @@ const legendaryLoot = [
   { name: "Zeek", atk: 350, def: 11, health: 0, rarity: "Legendary"},
   { name: "Angel's Lightning", atk: 25, def: 50, health: 240, rarity: "Legendary"},
   { name: "Jayson's Bow", atk: 400, def: 0, health: 0, rarity: "Legendary"},
+  { name: "Megamind", atk: 0, def: 0, health: 400, rarity: "Legendary"},
   { name: "Ahal's Bongos", atk: 300, def: 0, health: 40, rarity: "Legendary"}
 ]

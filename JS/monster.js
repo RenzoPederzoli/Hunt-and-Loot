@@ -43,7 +43,7 @@ class Monster {
       this.tier = 1
       this.loot = this.generateRandomLoot()
     }
-    else if (killCount === 50) { //Mini-Boss at stage 50
+    else if (killCount === 49) { //Mini-Boss at stage 50
       this.health = 3000
       this.power = 350
       this.defense = 85
