@@ -1,3 +1,4 @@
+let scale = 1.05
 class Monster {
   constructor(health = 100, power = 10, defense = 0) {
     this.health = health
@@ -36,18 +37,19 @@ class Monster {
       this.loot = this.generateRandomLoot()
     }
     else if (killCount >= 21 && killCount <= 26){
-      this.health = (Math.round(Math.random() * (200 - 160)) + 160) 
-      this.power = (Math.round(Math.random() * (35 - 25)) + 25) 
-      this.defense = (Math.round(Math.random() * (25))) 
+      this.health = Math.round(Math.random() * (200 - 160)) + 160
+      this.power = Math.round(Math.random() * (35 - 25)) + 25
+      this.defense = Math.round(Math.random() * (25))
       this.tier = 1
       this.loot = this.generateRandomLoot()
     }
     else { // This will be where I make game infinetly scale
-      this.health = (Math.round(Math.random() * (200 - 160)) + 160) 
-      this.power = (Math.round(Math.random() * (35 - 25)) + 25) 
+      this.health = (Math.round(Math.random() * (200 - 160)) + 160) * scale
+      this.power = (Math.round(Math.random() * (35 - 25)) + 25) * scale
       this.defense = (Math.round(Math.random() * (25))) 
       this.tier = 1
       this.loot = this.generateRandomLoot()
+      scale += 0.05
     }
   }
   
@@ -103,7 +105,7 @@ class Monster {
         return uncommonLoot
       else if (rand >= 0.35 && rand < 0.80)
         return rareLoot
-      else if (rand >= 0.80 && rand < 0.999)
+      else if (rand >= 0.80 && rand < 0.99)
         return epicLoot
       else {
         new Audio("../Sounds/legendarydrop.mp3").play()

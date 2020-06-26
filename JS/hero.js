@@ -39,11 +39,11 @@ class Hero {
   addItemStats(item) {
     this.health += item.health
     this.power += item.atk
-    if (this.defense + item.def <= 95) {
+    if (this.defense + item.def <= 85) {
       this.defense += item.def
     }
     else {
-      this.defense = 95;
+      this.defense = 85;
     }
   }
 
@@ -57,14 +57,14 @@ class Hero {
   makeWarrior() {
     this.health = 325
     this.power = 25
-    this.defense = 5
+    this.defense = 2.5
     this.role = "warrior"
   }
 
   makeTank() {
     this.health = 400
     this.power = 15
-    this.defense = 10
+    this.defense = 5
     this.role = "tank"
   }
 }
