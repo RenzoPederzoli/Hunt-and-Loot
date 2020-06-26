@@ -64,7 +64,7 @@ class Hero {
   makeTank() {
     this.health = 400
     this.power = 15
-    this.defense = 5
+    this.defense = 10
     this.role = "tank"
   }
 }
