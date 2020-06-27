@@ -85,6 +85,7 @@ atkBtn.onclick = () => {
   new Audio("../Sounds/sword-swing.wav").play() // Lets you spam sound
   let result = game.hero.attack(game.monster)
   game.writeStats()
+
   console.log("attacked,", `result: ${result}`)
   console.log(game.hero, game.monster)
 

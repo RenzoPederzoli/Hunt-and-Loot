@@ -8,14 +8,27 @@ class Hero {
     this.role = role
   }
 
+  //checks if juans resurrection is in array
+  checkForRes() {
+    for (let item of this.items) {
+      if (item.name === "Juan's Resurrection") {
+        this.items.splice(this.items.indexOf(item),1)
+        return true
+      }
+    }
+    return false
+  }
+
   // Hero always takes damage first, for now
   attack(monster) {
     // Damage to take is rounded for nice health numbers
     let heroDmgToTake = Math.round(monster.power * (100 - this.defense) / 100)
     let monsterDmgToTake = Math.round(this.power * (100 - monster.defense) / 100)
 
-    let resItem = { name: "Juan's Resurrection", atk: 0, def: 0, health: 0, rarity: "Legendary"}
-    if (this.health - heroDmgToTake <= 0 && this.items.includes(resItem)) {
+    document.getElementById("resurrect-notify").style.visibility = "hidden"
+    if (this.health - heroDmgToTake <= 0 && this.checkForRes()) {
+      new Audio("../Sounds/revive-sound.wav").play()
+      document.getElementById("resurrect-notify").style.visibility = "visible"
       this.health = 300
       return
     }

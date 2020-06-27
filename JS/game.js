@@ -22,13 +22,29 @@ class Game {
       new Audio("../Sounds/legendarydrop.mp3").play()
 
     let itemDiv = document.getElementById("item-choice")
-    itemDiv.innerHTML = `Choose Wisely: 
+    itemDiv.innerHTML += `Choose Wisely: `
 
-    <button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Attack: ${item1.atk} <br> Defense: ${item1.def} <br> Health: ${item1.health} </button>
+    //the following if else statements check if item is juans resurrect
+    if (item1.name === "Juan's Resurrection") {
+      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Grants one <br> revive! </button>`
+    }
+    else {
+      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Attack: ${item1.atk} <br> Defense: ${item1.def} <br> Health: ${item1.health} </button>`
+    }
 
-    <button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Attack: ${item2.atk} <br> Defense: ${item2.def} <br> Health: ${item2.health} </button>
+    if (item2.name === "Juan's Resurrection") {
+      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Grants one <br> revive! </button>`
+    }
+    else {
+      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Attack: ${item2.atk} <br> Defense: ${item2.def} <br> Health: ${item2.health} </button>`
+    }
     
-    <button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Attack: ${item3.atk} <br> Defense: ${item3.def} <br> Health: ${item3.health} </button>`
+    if (item3.name === "Juan's Resurrection") {
+      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Grants one <br> revive! </button>`
+    }
+    else {
+      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Attack: ${item3.atk} <br> Defense: ${item3.def} <br> Health: ${item3.health} </button>`
+    }
     
     let btnItem1 = document.getElementById("item1")
     btnItem1.onclick = () => {
