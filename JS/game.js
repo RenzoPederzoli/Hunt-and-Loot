@@ -24,23 +24,32 @@ class Game {
     let itemDiv = document.getElementById("item-choice")
     itemDiv.innerHTML += `Choose Wisely: `
 
-    //the following if else statements check if item is juans resurrect
+    //the following if else statements check if item is a unique
     if (item1.name === "Juan's Resurrection") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Grants one <br> revive! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Unique: <br> Grants one <br> revive! </button>`
+    }
+    else if (item1.name === "Felipe's Rod") {
+      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Unique <br> Heals for <br> 100 each stage! </button>`
     }
     else {
       itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Attack: ${item1.atk} <br> Defense: ${item1.def} <br> Health: ${item1.health} </button>`
     }
 
     if (item2.name === "Juan's Resurrection") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Grants one <br> revive! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br>Unique: <br> Grants one <br> revive! </button>`
+    }
+    else if (item2.name === "Felipe's Rod") {
+      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Unique <br> Heals for <br> 100 each stage! </button>`
     }
     else {
       itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Attack: ${item2.atk} <br> Defense: ${item2.def} <br> Health: ${item2.health} </button>`
     }
     
     if (item3.name === "Juan's Resurrection") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Grants one <br> revive! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br>Unique: <br> Grants one <br> revive! </button>`
+    }
+    else if (item3.name === "Felipe's Rod") {
+      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Unique <br> Heals for <br> 100 each stage! </button>`
     }
     else {
       itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Attack: ${item3.atk} <br> Defense: ${item3.def} <br> Health: ${item3.health} </button>`

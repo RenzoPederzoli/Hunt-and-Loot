@@ -19,6 +19,16 @@ class Hero {
     return false
   }
 
+  //checks if Felipe's rod is in array
+  checkForFelipes() {
+    for (let item of this.items) {
+      if (item.name === "Felipe's Rod") {
+        return true
+      }
+    }
+    return false
+  }
+
   // Hero always takes damage first, for now
   attack(monster) {
     // Damage to take is rounded for nice health numbers
@@ -29,7 +39,7 @@ class Hero {
     if (this.health - heroDmgToTake <= 0 && this.checkForRes()) {
       new Audio("../Sounds/revive-sound.wav").play()
       document.getElementById("resurrect-notify").style.visibility = "visible"
-      this.health = 300
+      this.health = 400
       return
     }
 

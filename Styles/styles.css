@@ -9,6 +9,13 @@ body {
   background-size: cover;
 }
 
+#sfx {
+  font-size: 30px;
+  font-weight: 700;
+  color:white;
+  cursor: pointer;
+}
+
 #resurrect-notify {
   color:white;
   position: absolute;
@@ -28,7 +35,8 @@ body {
 }
 
 #top-bar {
-  width:275px;
+  align-items:center;
+  width:350px;
   display:flex;
   justify-content: space-evenly;
 }

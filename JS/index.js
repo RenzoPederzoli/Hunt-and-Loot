@@ -6,13 +6,36 @@ const monsterDeath = new Audio("../Sounds/monster-death.wav")
 const heroDeath = new Audio("../Sounds/hero-death.wav")
 const roleSelect = new Audio("../Sounds/role-select.wav")
 const clickButton = new Audio("../Sounds/click-button.ogg")
+const swordSwing = new Audio("../Sounds/sword-swing.wav")
 
 backgroundMusic.volume = 0.15
 backgroundMusic.loop = true
 backgroundMusic.play()
 
+//mutes sound effects
+let sfxIcon = document.getElementById("sfx")
+function muteSfxAudio() {
+  clickButton.play()
+  if(!monsterDeath.muted) {
+    monsterDeath.muted = true;
+    heroDeath.muted = true;
+    clickButton.muted = true;
+    roleSelect.muted = true;
+    swordSwing.muted = true;
+    sfxIcon.innerHTML = "|SFX|"
+  }
+  else {
+    monsterDeath.muted = false;
+    heroDeath.muted = false;
+    clickButton.muted = false;
+    roleSelect.muted = false;
+    swordSwing.muted = false;
+    sfxIcon.innerHTML = "SFX"
+  }
+}
+
 let soundIcon = document.getElementById("mute-img")
-function muteAudio() {
+function muteMusicAudio() {
   clickButton.play()
   if(!backgroundMusic.muted) {
     backgroundMusic.muted = true;
@@ -82,7 +105,9 @@ let atkContainer = document.getElementById('atk-container')
 // If hero dies, game is over
 let atkBtn = document.getElementById("atk-btn")
 atkBtn.onclick = () => {  
-  new Audio("../Sounds/sword-swing.wav").play() // Lets you spam sound
+  swordSwing.load()
+  swordSwing.play()
+
   let result = game.hero.attack(game.monster)
   game.writeStats()
 
@@ -96,6 +121,8 @@ atkBtn.onclick = () => {
     game.endGame(game.hero.kills)
   }
   else if (result === "monster-dead") {
+    if (game.hero.checkForFelipes()) // checks for felipes item in items array
+      game.hero.health += 100
     monsterDeathAnimation()
     monsterDeath.play()
     atkContainer.style.visibility = "hidden";
