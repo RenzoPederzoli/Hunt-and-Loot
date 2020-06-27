@@ -1,16 +1,16 @@
 //Might think about adding new arrays for stronger mosnter
 const commonLoot = [
   { name: "Wood Sword", atk: 5, def: 0, health: 0, rarity: "Common"},
-  { name: "Paper Armor", atk: 0, def: 2.5, health: 0, rarity: "Common"},
+  { name: "Paper Armor", atk: 0, def: 3, health: 0, rarity: "Common"},
   { name: "Weak Heal", atk: 0, def: 0, health: 20, rarity: "Common"},
-  { name: "Adventure Hat", atk: 2.5, def: 1, health: 5, rarity: "Common"}
+  { name: "Adventure Hat", atk: 2.5, def: 2, health: 5, rarity: "Common"}
 ]
 
 const uncommonLoot = [
   { name: "Puny Heal", atk: 0, def: 0, health: 40, rarity: "Uncommon"},
   { name: "Wood Armor", atk: 0, def: 5, health: 0, rarity: "Uncommon"},
   { name: "Light Mace", atk: 10, def: 0, health: 0, rarity: "Uncommon"},
-  { name: "Adventure Shirt", atk: 5, def: 2.5, health: 10, rarity: "Uncommon"}
+  { name: "Adventure Shirt", atk: 5, def: 3, health: 10, rarity: "Uncommon"}
 ]
 
 const rareLoot = [
@@ -21,19 +21,20 @@ const rareLoot = [
 ]
 
 const epicLoot = [
-  { name: "Staff of the Magi", atk: 60, def: 0, health: 10, rarity: "Epic"},
+  { name: "Staff of the Magi", atk: 60, def: 0, health: 20, rarity: "Epic"},
   { name: "Geralt's Great Sword", atk: 90, def: 0, health: 0, rarity: "Epic"},
-  { name: "Divine Heal", atk: 0, def: 3, health: 120, rarity: "Epic"},
-  { name: "Paladin's Hammer", atk: 50, def: 0, health: 30, rarity: "Epic"},
+  { name: "Divine Heal", atk: 0, def: 3, health: 140, rarity: "Epic"},
+  { name: "Paladin's Hammer", atk: 50, def: 0, health: 40, rarity: "Epic"},
   { name: "Impregnable Defense", atk: 0, def: 20, health: 0, rarity: "Epic"},
-  { name: "Adventure Shoes", atk: 20, def: 10, health: 25, rarity: "Epic"}
+  { name: "Adventure Shoes", atk: 20, def: 10, health: 35, rarity: "Epic"}
 ]
 
 const legendaryLoot = [
-  { name: "Felipe's Rod", atk: 100, def: 20, health: 50, rarity: "Legendary"},
+  { name: "Felipe's Rod", atk: 100, def: 20, health: 60, rarity: "Legendary"},
   { name: "Zeek", atk: 400, def: 0, health: 20, rarity: "Legendary"},
   { name: "Angel's Lightning", atk: 25, def: 50, health: 240, rarity: "Legendary"},
   { name: "Jayson's Bow", atk: 500, def: 0, health: 0, rarity: "Legendary"},
-  { name: "Megamind", atk: 0, def: 0, health: 400, rarity: "Legendary"},
-  { name: "Ahal's Bongos", atk: 350, def: 0, health: 40, rarity: "Legendary"}
+  { name: "Gustavo's Brain", atk: 0, def: 0, health: 400, rarity: "Legendary"},
+  { name: "Ahal's Bongos", atk: 350, def: 0, health: 40, rarity: "Legendary"},
+  { name: "Juan's Resurrection", atk: 0, def: 0, health: 0, rarity: "Legendary"} //might not work
 ]

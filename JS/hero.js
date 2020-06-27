@@ -14,7 +14,13 @@ class Hero {
     let heroDmgToTake = Math.round(monster.power * (100 - this.defense) / 100)
     let monsterDmgToTake = Math.round(this.power * (100 - monster.defense) / 100)
 
-    if (this.health - heroDmgToTake <= 0) {
+    let resItem = { name: "Juan's Resurrection", atk: 0, def: 0, health: 0, rarity: "Legendary"}
+    if (this.health - heroDmgToTake <= 0 && this.items.includes(resItem)) {
+      this.health = 300
+      return
+    }
+
+    if (this.health - heroDmgToTake <= 0) { 
       this.health = 0
       return "hero-dead"
     }
@@ -48,7 +54,7 @@ class Hero {
   }
 
   makeRogue() {
-    this.health = 250 
+    this.health = 250
     this.power = 45
     this.defense = 0
     this.role = "rogue"

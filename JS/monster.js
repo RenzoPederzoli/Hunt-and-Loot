@@ -58,7 +58,7 @@ class Monster {
         this.defense = 85
       this.tier = 1
       this.loot = this.generateRandomLoot()
-      scale += 0.05
+      scale += 0.0475
     }
   }
   
@@ -121,10 +121,8 @@ class Monster {
       }
     }
     if (this.tier === "Mini-Boss") {
-      if (rand < 0.75)
-        return epicLoot
-      else
-        return legendaryLoot
+      let rand = Math.random()
+      return legendaryLoot
     }
   }
 
