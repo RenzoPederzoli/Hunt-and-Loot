@@ -38,3 +38,9 @@ const legendaryLoot = [
   { name: "Ahal's Bongos", atk: 350, def: 0, health: 40, rarity: "Legendary"},
   { name: "Juan's Resurrection", atk: 0, def: 0, health: 0, rarity: "Legendary"} 
 ]
+
+const bossLoot = [
+  { name: "Diablo's Pendant", atk: 500, def: 0, health: 0, rarity: "Legendary"},
+  { name: "Breath of Life", atk: 0, def: 0, health: 500, rarity: "Legendary"},
+  { name: "Druid's Touch", atk: 250, def: 0, health: 250, rarity: "Legendary"}
+]

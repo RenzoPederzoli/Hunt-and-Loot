@@ -1,6 +1,7 @@
 //Target stage h3 tag
 let stageCounter = document.getElementById("stages")
 
+
 class Game {
   constructor() {
     this.hero = new Hero()
@@ -8,51 +9,68 @@ class Game {
     this.monster.generateMonster(0)
   }
 
+  determineColor(item) {
+    switch (item.rarity) {
+      case "Legendary":
+        return `style="color:orange"`
+      case "Epic":
+        return `style="color:purple"`
+      case "Rare":
+        return `style="color:blue"`
+      case "Uncommon":
+        return `style="color:green"`
+      default:
+        return ``
+    }
+  }
+
   // Draws loot choices and removes atk btn temporarily
   chooseLoot(atkContainer) {
+    // I can reduce this code to loops if I wanted to
     let item1 = this.monster.loot[0]
     let item2 = this.monster.loot[1]
     let item3 = this.monster.loot[2]
 
+    //redundant code
     if (item1.rarity === "Legendary") 
-      new Audio("../Sounds/legendarydrop.mp3").play()
+     legendarySound.play()
     else if (item2.rarity === "Legendary")
-      new Audio("../Sounds/legendarydrop.mp3").play()
+     legendarySound.play()
     else if (item3.rarity === "Legendary")
-      new Audio("../Sounds/legendarydrop.mp3").play()
+     legendarySound.play()
 
     let itemDiv = document.getElementById("item-choice")
     itemDiv.innerHTML += `Choose Wisely: `
 
     //the following if else statements check if item is a unique
     if (item1.name === "Juan's Resurrection") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Unique: <br> Grants one <br> revive! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong style="color:orange"> ${item1.rarity} </strong> <br> ${item1.name}<br> Unique: <br> Grants one <br> revive! </button>`
     }
     else if (item1.name === "Felipe's Rod") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Unique <br> Heals for <br> 100 each stage! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong style="color:orange">${item1.rarity} </strong> <br> ${item1.name}<br> Unique <br> Heals for <br> 60 each stage! </button>`
     }
     else {
-      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong>${item1.rarity} </strong> <br> ${item1.name}<br> Attack: ${item1.atk} <br> Defense: ${item1.def} <br> Health: ${item1.health} </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item1"> <strong ${this.determineColor(item1)}>${item1.rarity} </strong> <br> ${item1.name}<br> Attack: ${item1.atk} <br> Defense: ${item1.def} <br> Health: ${item1.health} </button>`
     }
 
     if (item2.name === "Juan's Resurrection") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br>Unique: <br> Grants one <br> revive! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong style="color:orange">${item2.rarity} </strong> <br> ${item2.name}<br>Unique: <br> Grants one <br> revive! </button>`
     }
     else if (item2.name === "Felipe's Rod") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Unique <br> Heals for <br> 100 each stage! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong style="color:orange">${item2.rarity} </strong> <br> ${item2.name}<br> Unique <br> Heals for <br> 60 each stage! </button>`
     }
     else {
-      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong>${item2.rarity} </strong> <br> ${item2.name}<br> Attack: ${item2.atk} <br> Defense: ${item2.def} <br> Health: ${item2.health} </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item2"> <strong ${this.determineColor(item2)}>${item2.rarity} </strong> <br> ${item2.name}<br> Attack: ${item2.atk} <br> Defense: ${item2.def} <br> Health: ${item2.health} </button>`
     }
     
     if (item3.name === "Juan's Resurrection") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br>Unique: <br> Grants one <br> revive! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong style="color:orange">${item3.rarity} </strong> <br> ${item3.name}<br>Unique: <br> Grants one <br> revive! </button>`
     }
     else if (item3.name === "Felipe's Rod") {
-      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Unique <br> Heals for <br> 100 each stage! </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong style="color:orange">${item3.rarity} </strong> <br> ${item3.name}<br> Unique <br> Heals for <br> 60 each stage! </button>`
     }
     else {
-      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong>${item3.rarity} </strong> <br> ${item3.name}<br> Attack: ${item3.atk} <br> Defense: ${item3.def} <br> Health: ${item3.health} </button>`
+      itemDiv.innerHTML += `<button class = item-btn id = "item3"> <strong ${this.determineColor(item3)}>${item3.rarity} </strong> <br> ${item3.name}<br> Attack: ${item3.atk} <br> Defense: ${item3.def} <br> Health: ${item3.health} </button>`
     }
     
     let btnItem1 = document.getElementById("item1")

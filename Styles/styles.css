@@ -9,6 +9,21 @@ body {
   background-size: cover;
 }
 
+#time-beat {
+  background-image: url(../Images/wood-texture-1.jpg);
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 14px 40px 10px rgba(0,0,0,1);
+  border: 2px solid silver;
+  font-size: 26px;
+  text-align: center;
+  color:white;
+  padding: 7px;
+  visibility: hidden;
+}
+
 #sfx {
   font-size: 30px;
   font-weight: 700;
@@ -58,7 +73,6 @@ body {
 
 #monster-stats-container {
   background-image: url(../Images/wood-texture-1.jpg);
-  border: 10px solid red;
   box-shadow: 0px 14px 40px 10px rgba(0,0,0,1);
   border: 2px solid silver;
   font-size: 18px;

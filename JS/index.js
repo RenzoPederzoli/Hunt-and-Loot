@@ -7,6 +7,7 @@ const heroDeath = new Audio("../Sounds/hero-death.wav")
 const roleSelect = new Audio("../Sounds/role-select.wav")
 const clickButton = new Audio("../Sounds/click-button.ogg")
 const swordSwing = new Audio("../Sounds/sword-swing.wav")
+const legendarySound = new Audio("../Sounds/legendarydrop.mp3")
 
 backgroundMusic.volume = 0.15
 backgroundMusic.loop = true
@@ -22,6 +23,7 @@ function muteSfxAudio() {
     clickButton.muted = true;
     roleSelect.muted = true;
     swordSwing.muted = true;
+    legendarySound.muted = true;
     sfxIcon.innerHTML = "|SFX|"
   }
   else {
@@ -30,6 +32,7 @@ function muteSfxAudio() {
     clickButton.muted = false;
     roleSelect.muted = false;
     swordSwing.muted = false;
+    legendarySound.muted = false;
     sfxIcon.innerHTML = "SFX"
   }
 }
@@ -50,11 +53,22 @@ function muteMusicAudio() {
 //Initializes stages
 stageCounter.innerHTML = `Stage: ${game.hero.kills + 1}`
 
+//couple of things for timing
+let time1 = 0;
+let time2 = 0;
+function printSpeedRun(time) {
+  console.log(time)
+  let speedContainer = document.getElementById("time-beat")
+  speedContainer.style.visibility = "visible"
+  speedContainer.innerText = `Boss beat in ${time} seconds!`
+}
+
 // Targets div that hold roles
 let roleBtns = document.getElementById("roles")
 // Choosing rogue
 let rogueBtn = document.getElementById("rogue")
 rogueBtn.onclick = () => {
+  time1 = performance.now()
   roleSelect.play()
   heroImg.src = "../Images/rogue-sprite.png"
   heroImg.onload = drawChars
@@ -68,6 +82,7 @@ rogueBtn.onclick = () => {
 // Choosing warrior
 let warriorBtn = document.getElementById("warrior")
 warriorBtn.onclick = () => {
+  time1 = performance.now()
   roleSelect.play()
   heroImg.src = "../Images/warrior-sprite.png"
   heroImg.onload = drawChars
@@ -81,6 +96,7 @@ warriorBtn.onclick = () => {
 // Choosing tank
 let tankBtn = document.getElementById("tank")
 tankBtn.onclick = () => {
+  time1 = performance.now()
   roleSelect.play()
   heroImg.src = "../Images/tank-sprite.png"
   heroImg.onload = drawChars
@@ -122,7 +138,12 @@ atkBtn.onclick = () => {
   }
   else if (result === "monster-dead") {
     if (game.hero.checkForFelipes()) // checks for felipes item in items array
-      game.hero.health += 100
+      game.hero.health += 60
+    if (game.monster.tier === "Mini-Boss") {
+      time2 = performance.now()
+      let timeTaken = ((time2 - time1) / 1000).toFixed(4)
+      printSpeedRun(timeTaken)
+    }
     monsterDeathAnimation()
     monsterDeath.play()
     atkContainer.style.visibility = "hidden";

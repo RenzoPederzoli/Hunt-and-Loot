@@ -97,32 +97,34 @@ class Monster {
     }
     if (this.tier === 2) {
       let rand = Math.random()
-      if (rand < 0.4)
+      if (rand < 0.2)
         return commonLoot
-      else if (rand >= 0.4 && rand < 0.6)
+      else if (rand >= 0.2 && rand < 0.5)
         return uncommonLoot
-      else if (rand >= 0.6 && rand < 0.85)
+      else if (rand >= 0.5 && rand < 0.85)
         return rareLoot
-      else
+      else if (rand >= 0.85 && rand < 0.999)
         return epicLoot
+      else
+        return legendaryLoot
     }
     if (this.tier === 1) {
       let rand = Math.random()
-      if (rand < 0.15)
+      if (rand < 0.05)
         return commonLoot
-      else if (rand >= 0.15 && rand < 0.35)
+      else if (rand >= 0.05 && rand < 0.15)
         return uncommonLoot
-      else if (rand >= 0.35 && rand < 0.80)
+      else if (rand >= 0.15 && rand < 0.70)
         return rareLoot
-      else if (rand >= 0.80 && rand < 0.99)
+      else if (rand >= 0.70 && rand < 0.99)
         return epicLoot
       else {
         return legendaryLoot
       }
     }
     if (this.tier === "Mini-Boss") {
-      let rand = Math.random()
-      return legendaryLoot
+      let rand = Math.random() // why is this here?
+      return bossLoot
     }
   }
 
