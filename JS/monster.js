@@ -97,9 +97,9 @@ class Monster {
     }
     if (this.tier === 2) {
       let rand = Math.random()
-      if (rand < 0.2)
+      if (rand < 0.25)
         return commonLoot
-      else if (rand >= 0.2 && rand < 0.5)
+      else if (rand >= 0.25 && rand < 0.5)
         return uncommonLoot
       else if (rand >= 0.5 && rand < 0.85)
         return rareLoot
