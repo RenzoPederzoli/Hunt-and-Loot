@@ -159,6 +159,10 @@ class Game {
       monsterImg.src = "../Images/tier-1-monster.png"
       monsterImg.onload = drawChars
     }
+    else if (tier === "Mini-Boss") {
+      monsterImg.src = "../Images/mini-boss.png"
+      monsterImg.onload = drawChars
+    }
     else {
       monsterImg.src = "../Images/tier-5-monster.png"
       monsterImg.onload = drawChars
