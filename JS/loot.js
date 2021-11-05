@@ -32,7 +32,7 @@ const epicLoot = [
 const legendaryLoot = [
   { name: "Felipe's Rod", atk: 0, def: 0, health: 0, rarity: "Legendary"},
   { name: "Zeek", atk: 400, def: 0, health: 20, rarity: "Legendary"},
-  { name: "Angel's Lightning", atk: 25, def: 0, health: 240, rarity: "Legendary"},
+  { name: "Angel's Lightning", atk: 25000, def: 0, health: 240, rarity: "Legendary"},
   { name: "Jayson's Bow", atk: 500, def: 0, health: 0, rarity: "Legendary"},
   { name: "Gustavo's Brain", atk: 0, def: 0, health: 400, rarity: "Legendary"},
   { name: "Ahal's Bongos", atk: 350, def: 0, health: 40, rarity: "Legendary"},

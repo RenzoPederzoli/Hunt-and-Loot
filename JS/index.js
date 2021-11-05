@@ -141,7 +141,7 @@ atkBtn.onclick = () => {
       game.hero.health += 60
     if (game.monster.tier === "Mini-Boss") {
       time2 = performance.now()
-      let timeTaken = ((time2 - time1) / 1000).toFixed(4)
+      let timeTaken = ((time2 - time1) / 1000).toFixed(3)
       printSpeedRun(timeTaken)
     }
     monsterDeathAnimation()
