@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hunt & Loot</title>
-  <link rel = "stylesheet" href = "../Styles/start.css" />
-  <link rel = "stylesheet" href = "https://use.typekit.net/myt6aiw.css" />
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-</head>
-<body>
-  <audio id=intro-music src= "../Sounds/Preparing-for-Battle.mp3" autoplay loop></audio>
-  <img id=mute-img onclick="muteAudio()" src="../Images/unmuted.png">
-  <section id = "start-section">
-    <h1 id = title>Hunt & Loot</h1>
-    <a id = start-btn href = "main.html"> START </a>
-    <p id = instructions> <strong>Instructions:</strong> Click the attack button to kill those nasty monsters and claim your loot. How far can you make it? (Click anywhere to play music!) </p>
-  </section>
-  <footer id = bottom-bar>
-    <p>By: Renzo Pederzoli &copy<br>Music: Eric Matyas <br> SFX: Dillon Becker</p>
-    <p id = links>Find me: 
-      <a href = "https://www.linkedin.com/in/renzop9/" target="_blank"> <img class = logo src = "../Images/linkedin.png" alt = "linked-in-logo"> </a>
-      <a href = "https://github.com/RenzoPederzoli" target="_blank"> <img class = logo src = "../Images/github-logo.png" alt = "github-logo"> </a> 
-    </p>
-  </footer>
-</body>
-<script type="text/javascript">
-  let introMusic = document.getElementById("intro-music");
-  introMusic.volume = 0.15;
-  let soundIcon = document.getElementById("mute-img")
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hunt & Loot</title>
+    <link rel="stylesheet" href="../Styles/start.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/myt6aiw.css" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <audio
+      id="intro-music"
+      src="../Sounds/Preparing-for-Battle.mp3"
+      autoplay
+      loop
+    ></audio>
+    <img id="mute-img" onclick="muteAudio()" src="../Images/unmuted.png" />
+    <section id="start-section">
+      <h1 id="title">Hunt & Loot</h1>
+      <a id="start-btn" href="main.html"> START </a>
+      <p id="instructions">
+        <strong>Instructions:</strong> Click the attack button to kill those
+        nasty monsters and claim your loot. How far can you make it? (Click
+        anywhere to play music!)
+      </p>
+    </section>
+    <footer id="bottom-bar">
+      <p>
+        By: Renzo Pederzoli &copy<br />Music: Eric Matyas <br />
+        SFX: Dillon Becker
+      </p>
+      <p id="links">
+        Find me:
+        <a href="https://www.linkedin.com/in/renzop9/" target="_blank">
+          <img class="logo" src="../Images/linkedin.png" alt="linked-in-logo" />
+        </a>
+        <a href="https://github.com/RenzoPederzoli" target="_blank">
+          <img class="logo" src="../Images/github-logo.png" alt="github-logo" />
+        </a>
+      </p>
+    </footer>
+  </body>
+  <script type="text/javascript">
+    let introMusic = document.getElementById("intro-music");
+    introMusic.volume = 0.15;
+    let soundIcon = document.getElementById("mute-img");
 
-  // lets user click anywhere for music to play since chrome prevents it
-  document.addEventListener('click', musicPlay);
-  function musicPlay() {
-    introMusic.play();
-    document.removeEventListener('click', musicPlay);
-  }
+    // lets user click anywhere for music to play since chrome prevents it
+    document.addEventListener("click", musicPlay);
+    function musicPlay() {
+      introMusic.play();
+      document.removeEventListener("click", musicPlay);
+    }
 
-  function muteAudio() {
-    if(!introMusic.muted) {
-      document.getElementById("intro-music").muted = true;
-      soundIcon.src = "../Images/muted.png"
+    function muteAudio() {
+      if (!introMusic.muted) {
+        document.getElementById("intro-music").muted = true;
+        soundIcon.src = "../Images/muted.png";
+      } else {
+        introMusic.muted = false;
+        soundIcon.src = "../Images/unmuted.png";
+      }
     }
-    else {
-      introMusic.muted = false
-      soundIcon.src = "../Images/unmuted.png"
-    }
-  }
-</script>
+  </script>
 </html>
