@@ -1,9 +1,22 @@
 let game = new Game();
 
-//testing connection to server
-// fetch('http://localhost:9999/')
+//gets all scores from collection
+// fetch('http://localhost:9999/scores')
 //   .then(response => response.json())
 //   .then(data => console.log(data));
+
+let data = {'score' : 6};
+
+//places data into collection
+// fetch('http://localhost:9999/sendScore', {
+//   method : 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body : JSON.stringify(data),
+// })
+// .then(response => response.json())
+// .then(data => console.log(data));
 
 //Everything with sound below this
 const backgroundMusic = new Audio("../Sounds/background.m4a");
