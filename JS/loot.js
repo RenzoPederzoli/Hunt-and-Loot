@@ -36,8 +36,7 @@ const legendaryLoot = [
   { name: "Jayson's Bow", atk: 500, def: 0, health: 0, rarity: "Legendary"},
   { name: "Gustavo's Brain", atk: 0, def: 0, health: 400, rarity: "Legendary"},
   { name: "Ahal's Bongos", atk: 350, def: 0, health: 40, rarity: "Legendary"},
-  { name: "Juan's Resurrection", atk: 0, def: 0, health: 0, rarity: "Legendary"} ,
-  { name: "Unlucky", atk: 0, def: 0, health: -500, rarity: "Legendary"},
+  { name: "Juan's Resurrection", atk: 0, def: 0, health: 0, rarity: "Legendary"},
   { name: "St. Pablo's Protection", atk: 0, def: 85, health: 200, rarity: "Legendary"}  
 ]
 
